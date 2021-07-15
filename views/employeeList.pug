@@ -7,14 +7,6 @@ block content
             a(href='/employee/createEmployee')  Add New Employee
         div.pull-right
         a(href='/order')  View Order List
-    div.form-row
-        div.col.form-group.col-md-12   
-            form.search(action='/employee')
-                div.form-row
-                    div.col-md-8
-                        input.form-control(name='role' placeholder="Enter your search term(role) ...")
-                    div.col-md-4
-                        input.btn.btn-dark.btn-block(type="submit")
     table.table
         thead.thead-dark
             tr
@@ -26,28 +18,21 @@ block content
                 th
                 th
         tbody
-            if users.length
-            each user in users
+            if employees.length
+            each employee in employees
                 tr
-                    td #{user.lastname +' '+ user.firstname}
-                    td #{user.nin}
-                    td #{user.gender}
-                    td #{user.pastincidence}
-                    td #{user.role}
+                    td #{employee.lastname +' '+ employee.firstname}
+                    td #{employee.nin}
+                    td #{employee.gender}
+                    td #{employee.pastincidence}
+                    td #{employee.role}
                     td
-                        a(href='/employee/update/'+user._id) Update 
+                        a(href='/employee/update/'+employee._id) Update
                     td
                         form(method="post" action='/employee/delete')
-                            input(type="hidden", placeholder="", name="id", value=user._id)
+                            input(type="hidden", placeholder="", name="id", value=employee._id)
                             button.btn.btn-dark.btn-block(type="submit") Delete
     div.form-row
         div.pull-right
             a(class='button', href='/') Home Page
-        div.pull-left
-            form(method="post" action='/logout') 
-                button.btn.btn-dark.btn-block(type="submit") Log out
-    
-    
-
         
-                

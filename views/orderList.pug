@@ -1,0 +1,23 @@
+extends layout
+block content
+    header.card-header
+        h4.card-title Welcome 
+    div.form-row
+        div.col.form-group
+            a(href='/order/createOrder')  Add New Order
+        div.pull-right
+            a(class='button', href='/employee') Employee List
+    table.table
+        thead.thead-dark
+            tr
+                th Firstname
+                th Lastname
+                th Location
+                th Phone number
+                th Type of 
+                th Attached Driver
+                th Price
+    div.form-row
+        div.pull-right
+            a(class='button', href='/') Home Page
+        

@@ -4,10 +4,10 @@ const passport = require('passport');
 
 // gets and displays a login page
 router.get('/', (req, res) => {
-    res.render('login', { title: 'Login form' })
+    res.render('orderlist', { title: 'Order List' })
+})
+router.get('/createOrder', (req, res) => {
+    res.render('createOrder', { title: 'Create Order' })
 })
 
-router.post('/', (req,res) =>{
-    res.redirect('/employee');
-})
 module.exports = router;

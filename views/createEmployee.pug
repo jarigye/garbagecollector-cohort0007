@@ -1,8 +1,8 @@
 extends layout
 block content
     header.card-header
-        h4.card-title Add Employee (Driver or Conductor) 
-    form(method="POST"  action='/employee/createEmployee' enctype="multipart/form-data")
+        h4.card-title Add Employee  
+    form(method="POST" action='/employee/createEmployee' enctype="multipart/form-data")
         div.form-row
             div.col.form-group
                 label First name 
@@ -24,7 +24,7 @@ block content
                     input.form-check-input(type="radio" name="gender" value="male")
                     span.form-check-label Male 
             div.col.form-group
-                label Past incidences 
+                label Past incidence 
                 div
                     label.form-check.form-check-inline 
                         span.form-check-label accidents    &nbsp
@@ -38,7 +38,7 @@ block content
         div.form-row
             div.col.form-group
                 label Upload image
-                input(type='file' name='imageupload')
+                input(type='file', name='imageupload')
             div.col.form-group
                 label Role 
                 select.form-control(name="role")
@@ -49,4 +49,5 @@ block content
                 button.btn.btn-primary.btn-block Register Employee
         div.form-row
             div.pull-right
-                a(class='button' href='/employee') Employee List
+                a(class='button', href='/employee') Employee List
+        

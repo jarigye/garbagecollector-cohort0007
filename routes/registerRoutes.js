@@ -7,21 +7,15 @@ router.get('/', (req, res) => {
     res.render('registerFrontDesk', { title: 'Registration form' })
 })
 
-router.post('/', async(req, res) => {
-    try {
-        const registration = new Registration(req.body);
-        await Registration.register(registration, req.body.password, (err) => {
-            if (err)
-              { 
-               throw err
-              }
-            res.redirect('/login')
-        })
-    }
-    catch (err) {
-        res.status(400).send('Sorry! Something went wrong.')
-        console.log(err)
-    }
+router.post('/', (req, res) => {
+    console.log(req.body);
+    const registration = new Registration(req.body);
+    registration.save()
+        .then(() => { res.redirect('/login') })
+        .catch((err) => {
+            console.log(err);
+            res.send('Sorry! Something went wrong.');
+        });
 })
 
 module.exports = router;

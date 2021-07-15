@@ -1,0 +1,41 @@
+extends layout
+block content
+    header.card-header
+        h4.card-title Create Order  
+    form(method="POST" action='/register')
+        div.form-row
+            div.col.form-group
+                label First name 
+                input.form-control(name="firstname")
+            div.col.form-group
+                label Last name
+                input.form-control(name="lastname")
+            div.col.form-group
+                label User name
+                input.form-control(name="username")
+    div.form-row
+        div.col.form-group
+            label Service requested
+            div
+                label.form-check.form-check-inline 
+                    span.form-check-label Garbage trucks    &nbsp
+                    input.form-check-input(type="checkbox" checked name="service" value="garbage")
+                label.form-check.form-check-inline 
+                        span.form-check-label Sewage truck   &nbsp
+                        input.form-check-input(type="checkbox" checked name="service" value="sewage")
+        div.col.form-group
+            label Driver Allocated
+            select.form-control(name="role")
+                    option(value="driver")  Driver
+                    option(value="conductor") Conductor
+    div.form-row
+        div.col.form-group
+            label Truck Registration Number
+            input.form-control(name="trucknumber")
+    div.form-row
+        div.col.form-group
+            button.btn.btn-primary.btn-block Create Order
+    div.form-row
+        div.pull-right
+            a(class='button', href='/order') Order List
+        
